@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+<script type="text/javascript" src="java/jquery-3.6.0.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>form</title>
+</head>
+<body>
+	<div class="forform">
+
+			 <script type="text/javascript">
+                $(document).ready(function () {
+                $('.signup').on('submit',function (para) {
+                    para.preventDefault();
+                    $.ajax({
+                url:"processsignup.php",
+                 type:"post",
+                 data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  $('.showx').html("wait");
+                 },
+                 success:function(para2){
+                    $('.showx').html(para2);
+                   
+                 },
+                 error:function(){
+                    alert('error typing to processData');
+                 }
+
+                    })
+                });
+                })
+            </script>
+		<form class=" signup" action="processsignup.php" method="post">
+
+			<div class="showx" align="center"></div>
+			<div>
+			<div class="formsmall">
+				<input type="text" name="firstname" placeholder="firstname">
+				<input type="text" name="lastname" placeholder="lastname">
+			</div>
+			<div class="formsmall">
+				<input type="email" name="email" placeholder="email">
+				<input type="text" name="class" placeholder="class">
+			</div>
+			<div class="formsmall">
+				<input type="password" name="password" placeholder="password">
+				<input type="password" name="cpassword" placeholder="confirmpassword">
+			</div>
+			<div class="formsmall">
+				<input type="submit" value="submit" name="ss" style="background: navy; outline: none; 
+				border-radius: 10px; border: none; color: white;">
+			</div>
+			<div class="formsmall">
+				<span onclick="showlogin()">Already have an account</span>
+			</div>
+			</div>
+		</form>
+		<form class="login" action="processlogin.php" method="post">
+
+
+
+			 <script type="text/javascript">
+                $(document).ready(function () {
+                $('.login').on('submit',function (para) {
+                    para.preventDefault();
+                    $.ajax({
+                url:"processlogin.php",
+                 type:"post",
+                 data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  $('.showx').html("wait");
+                 },
+                 success:function(para2){
+                    $('.showx').html(para2);
+                   
+                 },
+                 error:function(){
+                    alert('error typing to processData');
+                 }
+
+                    })
+                });
+                })
+            </script>
+		
+			<div class="showx" align="center"></div>
+                <div class="formsmall">
+				<input type="email" name="email" placeholder="email">
+				<input type="password" name="password" placeholder="password">
+			 </div>
+			<div class="formsmall">
+				<input type="submit" value="submit" name="ss" style="background: navy; outline: none; 
+				border-radius: 10px; border: none; color: white;">
+			</div>
+			<div class="formsmall">
+				<span onclick="showreg()">dont have an account</span>
+			</div>
+			</div>
+
+		</form>
+	</div>
+<script type="text/javascript">
+	function showlogin () {
+	$('.signup').hide();
+	$('.login').css({"display":"flex"})
+	}
+
+	function showreg () {
+	$('.signup').css({"display":"flex"})
+	$('.login').hide();
+	}
+</script>
+</body>
+</html>

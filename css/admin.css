@@ -1,0 +1,402 @@
+html,body,h1,h2,h3,h4,p,img{
+	margin: 0px;
+	padding: 0px;
+}
+.adminsec{
+	width: 100%;
+	height: 700px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	
+}
+.forclick{
+	align-items: center;
+	position: absolute;
+	top: 3px;
+	
+	
+}
+.forclick>i{
+	margin-left: 10px;
+	color: black;
+	font-size: 20px;
+}
+.admin{
+	width: 20%;
+	height: 700px;
+	background-color: navy;
+	color: white;
+	display: none;
+
+}
+
+.adminhead{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	background-color: navy;
+}
+.adminhead>img{
+	margin-left: 11px;
+	width: 60px;
+	object-fit: cover;
+	height: 60px;
+	border-radius: 60px;
+}
+.adminhead>h3{
+	margin-left: 11px;
+	font-weight: lighter;
+}
+
+
+.adminc{
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+
+
+}
+.adminc>label{
+	width: 80%;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	
+	
+}
+.adminc>label:hover{
+	background-color: blue;
+}
+.adminc label>span{
+margin-left: 10px;
+font-family: sans-serif;
+font-weight: lighter;
+	
+}
+.board{
+	width: 100%;
+	height: 700px;
+	
+}
+.Dashboardb{
+width: 100%;
+height: 700px;
+background-image: url(../img/bg.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+
+}
+.myload{
+	width: 100%;
+	height:700px;
+	overflow: auto;
+}
+.forpost{
+	width: 100%;
+	height: auto;
+}
+.posthead{
+	margin-left: 15px;
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 60px;
+	
+}
+.posthead>img{
+	width: 50px;
+	height: 50px;
+border-radius: 40px;
+object-fit: cover;
+}
+.posthead>h2{
+	width: 87%;
+	font-family: sans-serif;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 30px;
+	
+
+}
+.fortextandphoto{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	height: auto;
+}
+.fortext{
+	width: 95%;
+	height: auto;
+	font-family: sans-serif;
+	word-break: break-all;
+	
+}
+.forimage{
+	margin-top: 5px;
+	width: 95%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: auto;
+	
+}
+.forimage>img{
+	width: 95%;
+	object-fit: cover;
+	height: 300px;
+	
+}
+.forimage>video{
+	width: 95%;
+	object-fit: cover;
+	height: 300px;
+	
+}
+.event{
+width: 100%;
+height:700px;
+align-items: center;
+justify-content: center;
+display: none;
+background-image: url(../img/bg.jpg);
+
+background-size: cover;
+background-repeat: no-repeat;
+}
+.eventform{
+	border-radius: 10px;
+	width: 30%;
+	background-color: white;
+	height: 500px;
+	box-shadow: 0px 0px 1px gray;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: white;
+}
+.eventform>textarea{
+	margin-top: 10px;
+	width: 90%;
+	outline: none;
+	height: 70px;
+	background-color: white;
+}
+.eventform>input{
+	margin-top: 10px;
+	width: 90%;
+	outline: none;
+	height: 30px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: white;
+}
+.post{
+width: 100%;
+background-image: url(../img/bg.jpg);
+
+background-size: cover;
+background-repeat: no-repeat;
+height: 700px;
+align-items: center;
+justify-content: center;
+	display: none;	
+}
+.aminchat{
+	display: none;
+width: 100%;
+background-color: blue;
+height: 700px;	
+}
+
+@media only screen and (max-width: 600px){
+.adminsec{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	
+}
+.admin{
+	width:80%;
+	height:100vh;
+	background-color: navy;
+left: 0px;
+display: none;
+	position: absolute;
+	color: white;
+
+}
+.board{
+	width: 100%;
+	height: 90vh;
+	
+}
+.Dashboardb{
+width: 100%;
+height: 90vh;
+overflow: auto;
+background-image: url(../img/bg.jpg);
+
+background-size: cover;
+background-repeat: no-repeat;
+
+}
+.myload{
+	width: 100%;
+	height:auto;
+	
+}
+.forpost{
+	width: 100%;
+	height: auto;
+	
+}
+.posthead{
+	margin-left: 15px;
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 60px;
+	
+}
+.posthead>img{
+	width: 50px;
+	height: 50px;
+border-radius: 40px;
+object-fit: cover;
+}
+.posthead>h2{
+	width: 87%;
+	font-family: sans-serif;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 30px;
+	
+
+}
+.fortextandphoto{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	height: auto;
+}
+.fortext{
+	width: 100%;
+	height: auto;
+	font-family: sans-serif;
+	word-break: break-all;
+	
+}
+.forimage{
+	margin-top: 5px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: auto;
+	
+}
+.forimage>img{
+	width: 100%;
+	object-fit: cover;
+	height: 300px;
+	
+}
+.forimage>video{
+	width: 100%;
+	object-fit: cover;
+	height: 300px;
+	
+}
+.event{
+width: 100%;
+height:100vh;
+align-items: center;
+justify-content: center;
+display: none;
+background-image: url(../img/bg.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+.eventform{
+	border-radius: 10px;
+	width: 100%;
+	background-color: white;
+	height:60vh;
+	box-shadow: 0px 0px 1px gray;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: white;
+}
+.eventform>textarea{
+	margin-top: 10px;
+	width: 90%;
+	outline: none;
+	height: 90px;
+	background-color: white;
+}
+.eventform>input{
+	margin-top: 10px;
+	width: 90%;
+	outline: none;
+	height: 40px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: white;
+}
+.post{
+width: 100%;
+background-image: url(../img/bg.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+height: 90vh;
+align-items: center;
+justify-content: center;
+	display: none;	
+}
+.aminchat{
+display: none;
+width: 100%;
+background-color: blue;
+height: 700px;	
+}
+.forclick{
+	width: 100%;
+	z-index: 10000;
+	height: 10vh;
+	align-items: center;
+	background-color: navy;
+	display: flex;
+	align-items: center;
+	
+}
+.forclick>i{
+	margin-left: 10px;
+	color: white;
+	font-size: 20px;
+}
+	
+	
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+<script type="text/javascript" src="java/jquery-3.6.0.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>admin</title>
+</head>
+<body>
+	<section class="adminsec">
+		<section class="admin">
+			<div class="adminhead">
+				<img id="pic">
+				<label class=" fa fa-camera" for="camer"></label>
+					<script type="text/javascript">
+				
+                function k() {
+                    
+                
+                $(document).ready(function () {
+
+					  $.ajax({
+				  url:"profilepic.php",
+                 type:"get",
+                 data:"nav=link",
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  //$('.showx').html("wait");
+                 },
+                 success:function(para2){
+                 document.getElementById('pic').src="profile/"+para2;
+                 },
+                 error:function(){
+                 	alert('error typing to processData');
+                 }
+
+					})
+				});
+				}
+                k();
+			</script>
+				<form class="chanpic" action="updateprofile.php" enctype="multipart/form-data" method="post">
+					<input type="file" name="myfile" style="display: none;" id="camer">
+				</form>
+
+				 <script type="text/javascript">
+                $(document).ready(function () {
+                $('.chanpic').on('change',function (para) {
+                    para.preventDefault();
+                    $.ajax({
+                url:"updateprofile.php",
+                 type:"post",
+                 data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  //$('.showx').html("wait");
+                 },
+                 success:function(para2){
+                    $('.vv').html(para2);
+                    k();
+                 },
+                 error:function(){
+                    alert('error typing to processData');
+                 }
+
+                    })
+                });
+                })
+            </script>
+            <span class="vv" style="width: 100%;position: absolute;top: 0px;"></span>
+				<h3 class="adminname">
+					<script type="text/javascript">
+						$('.adminname').load('adminname.php')
+					</script>
+				</h3>
+
+			</div>
+			<div class="adminc">
+				<label class="fa fa-home showdash" ><span>Dashboard</span></label>
+				<label class="fa fa-plus  showeve" ><span>Event</span></label>
+				<label class="fa fa-plus showpost"><span>post</span></label>
+				<label class="fa fa-comment showch"><span>chat</span></label>
+				
+			</div>
+			
+		</section>
+		<div class="forclick"><i class="fa fa-bars" onclick="showadmin('open')"></i></div>
+		<script type="text/javascript">
+			function showadmin(c) {
+			if (c=="open") {
+				document.getElementsByClassName('admin')[0].style.display="block";
+					document.getElementsByClassName('forclick')[0].style.display="none";
+				
+			}
+			else{
+			
+			}
+			}
+		</script>
+		<section class=" board">
+			<div class="Dashboardb">
+				
+				<div class="myload" style="width: 50%;">
+						<script type="text/javascript">
+					function posts() {
+					$(document).ready(function () {
+						$('.myload').load('showallpost.php');
+					})
+						}
+						posts();
+				</script>
+				</div>
+			</div>
+			<div class="event">
+
+
+			 <script type="text/javascript">
+                $(document).ready(function () {
+                $('.eventform').on('submit',function (para) {
+                    para.preventDefault();
+                    $.ajax({
+                url:"processevent.php",
+                 type:"post",
+                 data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  $('.showx').html("wait");
+                 },
+                 success:function(para2){
+                    $('.showx').html(para2);
+                   if (para2=="p") {
+                   	$('.Dashboardb').show();
+                   	$('.event').hide();
+                   	//alert(1);
+                   }
+                   
+                 },
+                 error:function(){
+                    alert('error typing to processData');
+                 }
+
+                    })
+                });
+                })
+            </script>
+            <div class="showxx"></div>
+				<form class="eventform" action="processevent.php" method="post" enctype="multipart/form-data">
+					<input type="text" name="tittle" placeholder="Title">
+				   <textarea placeholder="message" name="message"></textarea>
+					<input type="file" name="eventfile" id="imgs" style="display: none;">
+					<label class="fa fa-image" for="imgs"></label>
+					<input type="submit" value="submit" style=" width: 60%;" name="sut">
+					
+				</form>
+			</div>
+			<div class="post">
+
+				<script type="text/javascript">
+                $(document).ready(function () {
+                $('.post2').on('submit',function (para) {
+                    para.preventDefault();
+                    $.ajax({
+                url:"processpost.php",
+                 type:"post",
+                 data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  $('.showx').html("wait");
+                 },
+                 success:function(para2){
+                    $('.showx').html(para2);
+                   if (para2=="s") {
+                   	$('.Dashboardb').show();
+                   	$('.post').hide();
+                   posts();
+                   }
+                   
+                 },
+                 error:function(){
+                    alert('error typing to processData');
+                 }
+
+                    })
+                });
+                })
+            </script>
+				<form class="eventform post2" action="processpost.php" method="post" enctype="multipart/form-data">
+				   <textarea placeholder="message" name="message"></textarea>
+					<input type="file" name="myfile[]" id="imgs2" style="display: none;" multiple accept="">
+					<label class="fa fa-image" for="imgs2"></label>
+					<input type="submit" value="submit" style=" width: 60%;" name="sub">
+					
+				</form>
+			</div>
+			<div class="aminchat"></div>
+		</section>
+	</section>
+
+</body>
+<script type="text/javascript" src="java/java.js"></script>
+</html>

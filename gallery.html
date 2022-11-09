@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="java/jquery-3.6.0.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/gallery.css">
+	<title>school</title>
+</head>
+<body>
+	<header>
+		<div class="transpreantdiv">
+			<div class="header">
+					<div class="mybars"><i class="fa fa-bars mybars" onclick="show('open')"></i></div>
+				<div class="logo">
+					<img src="img/logo.jpg">
+				</div>
+				<nav class="headernav">
+					<a href="index.html">Home</a>
+					<a href="about.html">About us</a>
+					<a href="gallery.html">Gallery</a>
+					<a href="academic.html">Academic</a>
+					<a href="contactus.html">Contact us</a>
+				</nav>
+				<a href="form.html"><button type="button">Signup</button></a>
+			</div>
+			<h1> Gallery</h1>
+		</div>
+	</header>
+	<main>
+		<div class="forphotobigdiv">
+			<div class="forphoto">
+			<script type="text/javascript">
+				$(document).ready(function () {
+					$('.forphoto').load('galleryshow.php');
+				})
+			</script>
+
+			
+			
+			</div>
+		</div>
+	</main>
+	<div class="navi">
+	<label class="fa fa-times"onclick="show('close')"></label>
+	<img src="img/back.jpg">
+	                 <a href="index.html">Home<i class=" fa fa-home"></i></a>
+					<a href="about.html">About us <i class=" fa fa-question-circle"></i></a>
+					<a href="gallery.html">Gallery <i class=" fa fa-images"></i></a>
+					<a href="academic.html">Academic <i class=" fa fa-school"></i></a>
+					<a href="contactus.html">Contact us<i class="fa fa-phone"></i></a>
+
+
+</div>
+<script type="text/javascript">
+	function show(x) {
+		if (x=='open') {
+		document.getElementsByClassName('navi')[0].style.display="flex";	
+		}
+		else{
+		document.getElementsByClassName('navi')[0].style.display="none";	
+		}
+	}
+</script>
+</body>
+</html>
